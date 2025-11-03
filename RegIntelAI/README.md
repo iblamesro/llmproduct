@@ -1,4 +1,4 @@
-# RegIntel AI 🏦
+# RegIntel AI
 
 **AI-Driven Regulatory & Compliance Copilot for HexaBank**
 
@@ -6,7 +6,7 @@ A specialized LLM application trained on European regulations (EBA, ECB, EU AI A
 
 ---
 
-## 🎯 Business Value
+## Business Value
 
 - **Cuts regulatory-watch and interpretation time × 5**
 - **Reduces compliance & reputational risk**
@@ -14,7 +14,7 @@ A specialized LLM application trained on European regulations (EBA, ECB, EU AI A
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Capabilities
 - **Hybrid Document Input**: Drag-and-drop PDF upload for regulatory documents
@@ -34,7 +34,7 @@ A specialized LLM application trained on European regulations (EBA, ECB, EU AI A
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.9+
@@ -80,12 +80,12 @@ The application will open in your browser at `http://localhost:8501`
 
 ---
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### 1. Upload Documents
 - Click "Browse files" in the sidebar
 - Select one or more PDF files (regulations, policies, etc.)
-- Click "🔄 Process Documents"
+- Click "Process Documents"
 - Wait for processing confirmation
 
 ### 2. Ask Questions
@@ -101,12 +101,12 @@ You can either:
 
 ### 3. Review Results
 - Read the AI-generated analysis
-- Click "📚 Sources / Citations" to see evidence
+- Click "Sources / Citations" to see evidence
 - Continue the conversation with follow-up questions
 
 ### 4. Export Results
-- Use "📄 Download as TXT" for readable reports
-- Use "📊 Download as CSV" for structured data export
+- Use "Download as TXT" for readable reports
+- Use "Download as CSV" for structured data export
 
 ### 5. Session Management
 - **Clear Chat**: Remove conversation history (keeps documents)
@@ -114,7 +114,7 @@ You can either:
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 RegIntelAI/
@@ -135,7 +135,7 @@ RegIntelAI/
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 Edit `config.py` to customize:
 
@@ -157,7 +157,7 @@ SUGGESTED_PROMPTS = [
 
 ---
 
-## 🔒 Security Considerations
+## Security Considerations
 
 - **On-premise deployment**: Recommended for sensitive regulatory data
 - **API Key Security**: Store in `.env` file (never commit to git)
@@ -166,7 +166,7 @@ SUGGESTED_PROMPTS = [
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Test with Sample Documents
 1. Download sample regulations (e.g., EU AI Act PDF)
@@ -181,7 +181,7 @@ SUGGESTED_PROMPTS = [
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Impossible de résoudre l'importation" errors
 These are IDE warnings before installation. Install dependencies to resolve:
@@ -209,7 +209,7 @@ streamlit run app.py
 
 ---
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 **Expected Performance:**
 - Document upload: ~5-10 seconds per PDF
@@ -219,7 +219,7 @@ streamlit run app.py
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 1. **Multi-language support**: Add more EU languages
 2. **Advanced analytics**: Compliance score dashboard
@@ -230,7 +230,7 @@ streamlit run app.py
 
 ---
 
-## 📝 Development Notes
+## Development Notes
 
 ### Built With
 - **Streamlit**: Low-code web framework
@@ -247,13 +247,13 @@ streamlit run app.py
 
 ---
 
-## 📄 License
+## License
 
 Proprietary - HexaBank Internal Use Only
 
 ---
 
-## 👥 Contributors
+## Contributors
 
 **Albert School - LLM Product Development**
 - Group A
@@ -261,7 +261,7 @@ Proprietary - HexaBank Internal Use Only
 
 ---
 
-## 📧 Support
+## Support
 
 For issues or questions:
 1. Check troubleshooting section
@@ -270,7 +270,7 @@ For issues or questions:
 
 ---
 
-## 🎓 References
+## References
 
 - [EU AI Act](https://artificialintelligenceact.eu/)
 - [EBA Guidelines](https://www.eba.europa.eu/)
@@ -281,4 +281,4 @@ For issues or questions:
 
 ---
 
-**Built with ❤️ for HexaBank Compliance Team**
+**Built for HexaBank Compliance Team**

@@ -1,23 +1,23 @@
 # HexaBank LLM Applications - Project Overview
 
-## 📊 Executive Summary
+## Executive Summary
 
 This project delivers **two strategic LLM applications** to address HexaBank's AI maturity challenges:
 
-1. **RegIntel AI** (✅ READY) - Compliance copilot for regulatory analysis
-2. **AI Ops Navigator** (📋 PLANNED) - Enterprise AI governance platform
+1. **RegIntel AI** (READY) - Compliance copilot for regulatory analysis
+2. **AI Ops Navigator** (PLANNED) - Enterprise AI governance platform
 
 **Status**: RegIntel AI is **fully implemented and ready for deployment**. AI Ops Navigator has a complete strategic specification for future development.
 
 ---
 
-## 🎯 Business Context
+## Business Context
 
 ### Current State
-- ✅ Strong executive sponsorship
-- ⚠️ No centralized AI governance
-- ⚠️ Manual compliance processes
-- ⚠️ AI ambitions not tied to KPIs
+- Strong executive sponsorship
+- No centralized AI governance
+- Manual compliance processes
+- AI ambitions not tied to KPIs
 
 ### Strategic Response
 **Quick Win + Long-term Bet**
@@ -26,33 +26,33 @@ This project delivers **two strategic LLM applications** to address HexaBank's A
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 LLMproduct/
 │
-├── 📄 README.md                        ← You are here
-├── 📄 DEPLOYMENT_GUIDE.md              ← Start here for deployment
-├── 📄 HexaBank_AI_Strategy_Implementation.md  ← Strategic overview
-├── 📄 AI_Ops_Navigator_Spec.md         ← Future development spec
+├── README.md                        - You are here
+├── DEPLOYMENT_GUIDE.md              - Start here for deployment
+├── HexaBank_AI_Strategy_Implementation.md  - Strategic overview
+├── AI_Ops_Navigator_Spec.md         - Future development spec
 │
-├── RegIntelAI/                         ← ✅ READY TO DEPLOY
-│   ├── app.py                         ← Main Streamlit application
-│   ├── config.py                      ← Configuration
-│   ├── requirements.txt               ← Dependencies
-│   ├── .env.example                   ← API key template
-│   ├── start.sh                       ← Quick start (macOS/Linux)
-│   ├── start.bat                      ← Quick start (Windows)
-│   ├── README.md                      ← Full documentation
-│   ├── QUICKSTART.md                  ← 5-minute setup
+├── RegIntelAI/                      - READY TO DEPLOY
+│   ├── app.py                       - Main Streamlit application
+│   ├── config.py                    - Configuration
+│   ├── requirements.txt             - Dependencies
+│   ├── .env.example                 - API key template
+│   ├── start.sh                     - Quick start (macOS/Linux)
+│   ├── start.bat                    - Quick start (Windows)
+│   ├── README.md                    - Full documentation
+│   ├── QUICKSTART.md                - 5-minute setup
 │   ├── utils/
-│   │   ├── rag_engine.py             ← RAG implementation
-│   │   ├── document_processor.py     ← PDF processing
-│   │   └── export.py                 ← Export utilities
-│   ├── data/                          ← Document uploads
-│   └── chroma_db/                     ← Vector database
+│   │   ├── rag_engine.py            - RAG implementation
+│   │   ├── document_processor.py    - PDF processing
+│   │   └── export.py                - Export utilities
+│   ├── data/                        - Document uploads
+│   └── chroma_db/                   - Vector database
 │
-└── PDFs/                               ← Original assignment documents
+└── PDFs/                            - Original assignment documents
     ├── Assignment-2 - Part 1.pdf
     ├── Group_A_report_LLM_product.pdf
     ├── Group_A_slides parti 2.pdf
@@ -61,7 +61,7 @@ LLMproduct/
 
 ---
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### For Deployment
 ```bash
@@ -76,18 +76,18 @@ Read **HexaBank_AI_Strategy_Implementation.md**
 
 ---
 
-## 1️⃣ RegIntel AI
+## 1. RegIntel AI
 
 ### Overview
 AI-Driven Regulatory & Compliance Copilot that analyzes European regulations (EU AI Act, EBA, ECB) and performs gap analyses with internal policies.
 
 ### Key Features
-- 📄 Drag-and-drop PDF upload
-- 🔍 RAG-powered compliance analysis
-- 📚 Evidence-based citations
-- 💬 Interactive chat interface
-- 💾 Export to TXT/CSV
-- 🔒 On-premise deployment
+- Drag-and-drop PDF upload
+- RAG-powered compliance analysis
+- Evidence-based citations
+- Interactive chat interface
+- Export to TXT/CSV
+- On-premise deployment
 
 ### Technical Stack
 - **Model**: GPT-4o-mini
@@ -102,24 +102,24 @@ AI-Driven Regulatory & Compliance Copilot that analyzes European regulations (EU
 - **Proactive EU AI Act alignment**
 - **Traceable audit trail**
 
-### Status: ✅ COMPLETE & READY
+### Status: COMPLETE & READY
 
 **Time to deploy**: < 1 hour  
 **Time to value**: < 1 day
 
 ---
 
-## 2️⃣ AI Ops Navigator
+## 2. AI Ops Navigator
 
 ### Overview
 Enterprise AI governance platform providing centralized tracking, standardized business cases, industrialization roadmaps, and ChatOps for all AI initiatives.
 
 ### Key Capabilities
-- 📊 AI Portfolio Dashboard
-- 💼 Business Case Generator (LLM-powered)
-- 🛣️ Industrialization Roadmaps (CI/CD, monitoring)
-- 💬 ChatOps Interface
-- ⚖️ Risk & Compliance Engine (NIST RMF aligned)
+- AI Portfolio Dashboard
+- Business Case Generator (LLM-powered)
+- Industrialization Roadmaps (CI/CD, monitoring)
+- ChatOps Interface
+- Risk & Compliance Engine (NIST RMF aligned)
 
 ### Technical Stack
 - **Frontend**: React + TypeScript
@@ -133,7 +133,7 @@ Enterprise AI governance platform providing centralized tracking, standardized b
 - **95% compliance score** across portfolio
 - **Common governance language**
 
-### Status: 📋 SPECIFICATION COMPLETE
+### Status: SPECIFICATION COMPLETE
 
 **Timeline**: 12-18 months  
 **Team**: 6 FTE + 3 SME  
@@ -141,31 +141,31 @@ Enterprise AI governance platform providing centralized tracking, standardized b
 
 ---
 
-## 🎯 Implementation Strategy
+## Implementation Strategy
 
 ### Phase 1: NOW (Week 1)
-✅ Deploy RegIntel AI
+Deploy RegIntel AI
 - Set up on-premise instance
 - Onboard compliance team
 - Upload regulatory documents
 - Collect initial feedback
 
 ### Phase 2: Month 1-3
-🔄 Optimize RegIntel AI
+Optimize RegIntel AI
 - Refine prompts based on usage
 - Add more documents
 - Scale to more users
 - Measure business impact
 
 ### Phase 3: Quarter 1-2
-📋 Plan AI Ops Navigator
+Plan AI Ops Navigator
 - Secure executive approval
 - Allocate budget & team
 - Define MVP scope
 - Begin development
 
 ### Phase 4: Year 1-2
-🏗️ Build AI Ops Navigator
+Build AI Ops Navigator
 - MVP: Project registry + dashboard
 - AI Integration: LLM + ChatOps
 - Advanced: Monitoring + automation
@@ -173,7 +173,7 @@ Enterprise AI governance platform providing centralized tracking, standardized b
 
 ---
 
-## 📊 Expected ROI
+## Expected ROI
 
 ### RegIntel AI (6 months)
 - **Investment**: €5K setup + €6K/year operations
@@ -190,7 +190,7 @@ Enterprise AI governance platform providing centralized tracking, standardized b
 
 ---
 
-## 🔐 Security & Compliance
+## Security & Compliance
 
 ### Data Protection
 - On-premise deployment (no data leaves HexaBank)
@@ -212,7 +212,7 @@ Enterprise AI governance platform providing centralized tracking, standardized b
 
 ---
 
-## 👥 Team & Governance
+## Team & Governance
 
 ### RegIntel AI
 - **Owner**: Chief Compliance Officer
@@ -228,27 +228,27 @@ Enterprise AI governance platform providing centralized tracking, standardized b
 
 ---
 
-## 📈 Success Metrics
+## Success Metrics
 
 ### Technical KPIs
-- ✅ 99.5% uptime
-- ✅ < 5s response time
-- ✅ Zero security incidents
+- 99.5% uptime
+- < 5s response time
+- Zero security incidents
 
 ### Business KPIs
-- ✅ 90% user adoption
-- ✅ 5x efficiency improvement
-- ✅ 95% accuracy
-- ✅ Positive ROI in 6 months
+- 90% user adoption
+- 5x efficiency improvement
+- 95% accuracy
+- Positive ROI in 6 months
 
 ### Governance KPIs
-- ✅ 100% AI initiative tracking
-- ✅ 95% compliance score
-- ✅ Quarterly performance reviews
+- 100% AI initiative tracking
+- 95% compliance score
+- Quarterly performance reviews
 
 ---
 
-## 🐛 Common Issues & Solutions
+## Common Issues & Solutions
 
 ### Issue: Dependencies not installed
 **Solution**: Run `pip install -r requirements.txt`
@@ -266,7 +266,7 @@ See **DEPLOYMENT_GUIDE.md** for complete troubleshooting.
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 ### For Users
 - **QUICKSTART.md** - 5-minute setup
@@ -285,7 +285,7 @@ See **DEPLOYMENT_GUIDE.md** for complete troubleshooting.
 
 ---
 
-## 🔮 Future Roadmap
+## Future Roadmap
 
 ### Near-term (Q1 2026)
 - [ ] RegIntel AI: Multi-language support
@@ -307,7 +307,7 @@ See **DEPLOYMENT_GUIDE.md** for complete troubleshooting.
 
 ---
 
-## 🎓 Key Learnings
+## Key Learnings
 
 ### Technical Decisions
 - **RAG over fine-tuning**: Better traceability, easier updates
@@ -324,27 +324,27 @@ See **DEPLOYMENT_GUIDE.md** for complete troubleshooting.
 
 ---
 
-## 🏆 Project Achievements
+## Project Achievements
 
-✅ **Complete working RegIntel AI application**
+**Complete working RegIntel AI application**
 - Full RAG implementation
 - Professional Streamlit UI
 - Export functionality
 - Comprehensive documentation
 
-✅ **Strategic AI Ops Navigator specification**
+**Strategic AI Ops Navigator specification**
 - Architecture design
 - NIST RMF alignment
 - Implementation roadmap
 - Team & budget planning
 
-✅ **Enterprise-ready documentation**
+**Enterprise-ready documentation**
 - Deployment guides
 - Training materials
 - Strategic overview
 - Technical specifications
 
-✅ **Production-ready codebase**
+**Production-ready codebase**
 - Clean architecture
 - Error handling
 - Security considerations
@@ -352,7 +352,7 @@ See **DEPLOYMENT_GUIDE.md** for complete troubleshooting.
 
 ---
 
-## 📞 Support & Contact
+## Support & Contact
 
 ### Technical Support
 - **Documentation**: Check README and DEPLOYMENT_GUIDE first
@@ -371,7 +371,7 @@ See **DEPLOYMENT_GUIDE.md** for complete troubleshooting.
 
 ---
 
-## ✅ Next Actions
+## Next Actions
 
 ### For Immediate Deployment
 1. **Review** DEPLOYMENT_GUIDE.md
@@ -389,24 +389,24 @@ See **DEPLOYMENT_GUIDE.md** for complete troubleshooting.
 
 ---
 
-## 🎉 Conclusion
+## Conclusion
 
 This project delivers **immediate value** (RegIntel AI) while laying the foundation for **long-term AI maturity** (AI Ops Navigator).
 
-**RegIntel AI is production-ready NOW** ✅  
-**AI Ops Navigator is strategically planned** 📋
+**RegIntel AI is production-ready NOW**  
+**AI Ops Navigator is strategically planned**
 
 HexaBank is positioned to transform from pilot-heavy to governance-first, with world-class responsible AI capabilities.
 
 ---
 
-## 📄 License
+## License
 
 **Proprietary - HexaBank Internal Use Only**
 
 ---
 
-## 👥 Credits
+## Credits
 
 **Project Team**: Albert School - Group A  
 **Date**: November 3, 2025  
@@ -415,11 +415,11 @@ HexaBank is positioned to transform from pilot-heavy to governance-first, with w
 
 ---
 
-**🏦 Built with ❤️ for HexaBank's AI Transformation Journey**
+**Built for HexaBank's AI Transformation Journey**
 
 ---
 
-## 📎 Quick Links
+## Quick Links
 
 - [Deployment Guide](DEPLOYMENT_GUIDE.md)
 - [Strategic Overview](HexaBank_AI_Strategy_Implementation.md)
