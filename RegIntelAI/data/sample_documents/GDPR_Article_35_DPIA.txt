@@ -1,0 +1,138 @@
+# GDPR Article 35 - Data Protection Impact Assessment
+
+## When is a DPIA Required?
+
+A Data Protection Impact Assessment (DPIA) is mandatory when processing is likely to result in high risk to the rights and freedoms of natural persons, particularly when using new technologies.
+
+## Situations Requiring DPIA
+
+1. **Systematic and extensive evaluation** of personal aspects based on automated processing
+2. **Large-scale processing** of special categories of data or personal data relating to criminal convictions
+3. **Systematic monitoring** of a publicly accessible area on a large scale
+
+## Content of DPIA
+
+The assessment must contain at least:
+
+### 1. Description of Processing Operations
+- Nature, scope, context, and purposes of processing
+- Categories of personal data
+- Recipients of data
+- Storage periods
+
+### 2. Necessity and Proportionality Assessment
+- Purposes of processing and means
+- Assessment of necessity
+- Assessment of proportionality
+
+### 3. Risk Assessment
+Evaluation of risks to rights and freedoms of data subjects:
+- Source of risk
+- Nature of risk
+- Severity of risk
+- Likelihood of risk
+
+### 4. Mitigation Measures
+- Security measures
+- Safeguards
+- Security mechanisms
+- Procedures to demonstrate compliance
+
+## DPIA Process
+
+1. **Screening**: Determine if DPIA is necessary
+2. **Describe**: Document the processing operation
+3. **Consult**: Seek views of data subjects where appropriate
+4. **Assess**: Identify and assess risks
+5. **Identify**: Determine measures to mitigate risks
+6. **Sign off**: Approve and record the DPIA
+7. **Monitor**: Keep DPIA under review
+
+## Prior Consultation with Supervisory Authority
+
+Required when:
+- DPIA indicates high risk
+- Controller cannot identify sufficient measures to mitigate risk
+- Residual risk remains high despite mitigation efforts
+
+## Supervisory Authority Response
+
+Must provide written advice within 8 weeks (extendable to 14 weeks):
+- Whether processing complies with GDPR
+- Remediation measures
+- Use of standard contractual clauses
+- Authorization for binding corporate rules
+
+## Banking Sector Specific Considerations
+
+### AI and Automated Decision Making
+Banks using AI for:
+- Credit scoring
+- Fraud detection
+- Customer profiling
+- Risk assessment
+
+Must conduct DPIA addressing:
+- Algorithm transparency
+- Explanation rights (Article 22)
+- Human oversight mechanisms
+- Bias detection and mitigation
+
+### Large-Scale Processing
+Banks typically process data on large scale:
+- Customer databases
+- Transaction histories
+- Cross-border transfers
+- Third-party data sharing
+
+### Special Categories of Data
+Financial data may reveal:
+- Health information (insurance, medical loans)
+- Trade union membership (payroll deductions)
+- Political opinions (donations)
+- Religious beliefs (charity contributions)
+
+## Documentation Requirements
+
+DPIA must be:
+- **Written**: Formal documented assessment
+- **Comprehensive**: Cover all aspects of processing
+- **Updated**: Review when circumstances change
+- **Accessible**: Available for supervisory authority inspection
+
+## Review and Update Triggers
+
+DPIA must be reviewed when:
+- Processing operation changes significantly
+- New risks emerge
+- Technology evolves
+- Legal requirements change
+- Every 2-3 years as best practice
+
+## Accountability Measures
+
+Controllers must:
+- Maintain records of all DPIAs
+- Document decision-making processes
+- Keep evidence of supervisory authority consultations
+- Demonstrate compliance with Article 35
+
+## Integration with Risk Management
+
+DPIA should align with:
+- Enterprise Risk Management (ERM)
+- Operational Risk Framework
+- Compliance Management System
+- Internal Audit Programs
+
+## Penalties for Non-Compliance
+
+Failure to conduct DPIA when required:
+- Administrative fines up to €10 million or 2% of global turnover
+- Mandatory corrective measures
+- Processing ban until compliance achieved
+- Reputational damage
+
+---
+
+*This summary is for compliance guidance. Consult with Data Protection Officers and legal counsel for specific implementations.*

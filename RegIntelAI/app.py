@@ -17,7 +17,12 @@ from config import (
     OPENAI_API_KEY
 )
 from utils.rag_engine import RAGEngine
-from utils.document_processor import extract_text_from_pdf, chunk_documents, format_citations
+from utils.document_processor import (
+    extract_text_from_file, 
+    chunk_documents, 
+    format_citations, 
+    load_documents_from_folder
+)
 from utils.export import export_to_csv, format_conversation_for_export
 
 # Configuration de la page
@@ -241,25 +246,41 @@ def render_sidebar():
         st.button("🔍  Recherche", key="search_btn")
         
         # Bouton Documents
-        if st.button("📄  Documents", key="docs_btn"):
+        if st.button("📄  Upload Documents", key="docs_btn"):
             st.session_state.show_upload = not st.session_state.get('show_upload', False)
             st.rerun()
+        
+        # Bouton Load from Data Folder
+        if st.button("📁  Load from Data Folder", key="load_folder_btn"):
+            if initialize_rag():
+                if load_documents_from_data_folder():
+                    st.success(f"Loaded {len(st.session_state.uploaded_files)} document(s)!")
+                    st.rerun()
         
         st.markdown("---")
         
         # Informations sur les documents
         if st.session_state.documents_loaded:
-            st.success(f"✅ {len(st.session_state.uploaded_files)} document(s) chargé(s)")
+            st.success(f"{len(st.session_state.uploaded_files)} document(s) loaded")
             
-            with st.expander("📚 Documents actifs"):
-                for doc in st.session_state.uploaded_files:
-                    st.write(f"• {doc}")
+            with st.expander("📚 Active Documents", expanded=True):
+                for idx, doc in enumerate(st.session_state.uploaded_files):
+                    col1, col2 = st.columns([4, 1])
+                    with col1:
+                        st.write(f"📄 {doc}")
+                    with col2:
+                        if st.button("🗑️", key=f"del_{idx}", help="Remove this document"):
+                            st.session_state.uploaded_files.remove(doc)
+                            if len(st.session_state.uploaded_files) == 0:
+                                st.session_state.rag_engine.clear_collection()
+                                st.session_state.documents_loaded = False
+                            st.rerun()
             
-            if st.button("🗑️  Effacer les documents"):
+            if st.button("🗑️  Clear All Documents"):
                 st.session_state.rag_engine.clear_collection()
                 st.session_state.documents_loaded = False
                 st.session_state.uploaded_files = []
-                st.success("✅ Documents effacés !")
+                st.success("All documents cleared!")
                 st.rerun()
         
         # Export
@@ -285,11 +306,11 @@ def render_sidebar():
 
 
 def process_uploaded_file(uploaded_file):
-    """Process an uploaded PDF file"""
+    """Process an uploaded file (PDF, DOCX, TXT, MD)"""
     try:
         with st.spinner(f"Processing {uploaded_file.name}..."):
-            # Extract text from PDF
-            text = extract_text_from_pdf(uploaded_file)
+            # Extract text from file
+            text = extract_text_from_file(uploaded_file, uploaded_file.name)
             
             # Chunk the document
             chunks = chunk_documents(text, uploaded_file.name)
@@ -305,7 +326,42 @@ def process_uploaded_file(uploaded_file):
             
             return True
     except Exception as e:
-        st.error(f"❌ Error processing {uploaded_file.name}: {str(e)}")
+        st.error(f"Error processing {uploaded_file.name}: {str(e)}")
+        return False
+
+
+def load_documents_from_data_folder():
+    """Load all documents from the data/sample_documents folder"""
+    try:
+        data_folder = os.path.join(os.path.dirname(__file__), "data", "sample_documents")
+        
+        if not os.path.exists(data_folder):
+            st.warning("No data folder found. Create 'data/sample_documents' and add documents.")
+            return False
+        
+        documents = load_documents_from_folder(data_folder)
+        
+        if not documents:
+            st.info("No documents found in data/sample_documents folder.")
+            return False
+        
+        with st.spinner(f"Loading {len(documents)} document(s) from folder..."):
+            for doc in documents:
+                # Chunk the document
+                chunks = chunk_documents(doc['text'], doc['filename'])
+                
+                # Add to vector store
+                st.session_state.rag_engine.add_documents(chunks)
+                
+                # Track loaded documents
+                if doc['filename'] not in st.session_state.uploaded_files:
+                    st.session_state.uploaded_files.append(doc['filename'])
+            
+            st.session_state.documents_loaded = True
+            return True
+            
+    except Exception as e:
+        st.error(f"Error loading documents from folder: {str(e)}")
         return False
 
 
@@ -319,24 +375,40 @@ def render_welcome_screen():
         st.markdown("""
         <div class="upload-container">
             <div class="upload-icon">📄</div>
-            <div class="upload-text">Upload regulatory documents (PDF)</div>
+            <div class="upload-text">Upload regulatory documents</div>
+            <div style="color: #5f6368; font-size: 14px; margin-top: 10px;">
+                Supported formats: PDF, DOCX, TXT, MD
+            </div>
         </div>
         """, unsafe_allow_html=True)
         
         uploaded_files = st.file_uploader(
-            "Choose PDF files",
-            type=["pdf"],
+            "Choose files (PDF, DOCX, TXT, MD)",
+            type=["pdf", "docx", "txt", "md"],
             accept_multiple_files=True,
             label_visibility="collapsed"
         )
         
         if uploaded_files:
-            if st.button("📤 Upload and Process", use_container_width=True, type="primary"):
-                for uploaded_file in uploaded_files:
-                    if uploaded_file.name not in st.session_state.uploaded_files:
-                        if process_uploaded_file(uploaded_file):
-                            st.success(f"✅ {uploaded_file.name} uploaded successfully!")
-                st.rerun()
+            st.info(f"📋 {len(uploaded_files)} file(s) selected")
+            
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                for file in uploaded_files:
+                    file_size = len(file.getvalue()) / 1024  # KB
+                    st.write(f"• {file.name} ({file_size:.1f} KB)")
+            
+            with col2:
+                if st.button("📤 Process", use_container_width=True, type="primary"):
+                    success_count = 0
+                    for uploaded_file in uploaded_files:
+                        if uploaded_file.name not in st.session_state.uploaded_files:
+                            if process_uploaded_file(uploaded_file):
+                                success_count += 1
+                    
+                    if success_count > 0:
+                        st.success(f"{success_count} document(s) processed successfully!")
+                        st.rerun()
     
     # Suggestions
     st.markdown("""
