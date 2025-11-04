@@ -171,9 +171,7 @@ def chunk_documents(text: str, filename: str) -> List[Dict[str, str]]:
     """
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
-        chunk_overlap=CHUNK_OVERLAP,
-        separators=["\n\n", "\n", ". ", " ", ""],
-        length_function=len,
+        chunk_overlap=CHUNK_OVERLAP
     )
     
     chunks = text_splitter.split_text(text)
